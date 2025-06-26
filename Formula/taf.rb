@@ -1,8 +1,8 @@
 class Taf < Formula
   desc "Testing & Automation Framework in Lua"
   homepage "https://github.com/jayadamsmorgan/taf"
-  url "https://github.com/jayadamsmorgan/taf/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ed71b0013b001873c6b6e1bda04d564de462208e95f21e4cb9a2aae0bcb91c77"
+  url "https://github.com/jayadamsmorgan/taf/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "065e682c56f0370262dd945b2d4d1671be2643593a526e3e3d9a5436bf31a380"
   license "Apache-2.0"
 
   depends_on "meson"      => :build
@@ -20,18 +20,8 @@ class Taf < Formula
   depends_on "notcurses"
 
   def install
-    system "meson", "setup", "build", *std_meson_args
+    system "meson", "setup", "build", *std_meson_args, "-Dlua_install_dir=#{pkgshare}/lua"
     system "meson", "install", "-C", "build"
-  end
-
-  def caveats
-    <<~EOS
-      TAF installs its Lua helper modules under ~/.taf/<version>/lib at build
-      time. That directory is *not* under Homebrew’s prefix, so upgrades and
-      uninstalls will leave the data intact. You can override the install
-      location by exporting HOME before building, or by patching the
-      Meson script.
-    EOS
   end
 
   test do
