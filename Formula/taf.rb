@@ -20,7 +20,7 @@ class Taf < Formula
   depends_on "notcurses"
 
   def install
-    system "meson", "setup", "build", *std_meson_args, "-Dlua_install_dir=#{pkgshare}"
+    system "meson", "setup", "build", *std_meson_args, "-Dtaf_dir_path=#{pkgshare}"
     system "meson", "install", "-C", "build"
   end
 
