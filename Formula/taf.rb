@@ -1,8 +1,8 @@
 class Taf < Formula
   desc "Testing & Automation Framework in Lua"
   homepage "https://github.com/jayadamsmorgan/taf"
-  url "https://github.com/jayadamsmorgan/taf/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "c0dd64b1ae7cfb962a4cf8563effed1d5babe294ca597a5ad9148a5dbb2e7c76"
+  url "https://github.com/jayadamsmorgan/taf/archive/refs/tags/v1.2.0.tar.gz"
+  sha256 "306dfdd00105b959e01aa59a192c57cae63df4de4c3097a6b502cca018b41186"
   license "Apache-2.0"
 
   depends_on "meson"      => :build
